@@ -67,6 +67,7 @@
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans leading-normal">
+
   <!-- NAVBAR -->
   <header class="bg-white shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,8 +110,14 @@
         <a href="#testimoni" class="hover:text-pink-600">Testimoni</a>
         <a href="#kontak" class="hover:text-pink-600">Kontak</a>
         <a href="#checkout" class="hover:text-pink-600 font-semibold">Checkout</a>
-        <button id="mobileCartBtn" class="mt-2 bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700">Keranjang
-          (<span id="mobileCartCount">0</span>)</button>
+        <div class="flex items-center gap-3">
+          <input id="search" type="search" placeholder="Cari buket..."
+            class="hidden sm:block border rounded-md px-3 py-2 w-56" />
+          <button id="cartBtn" class="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700">
+            Keranjang (<span id="cartCount">0</span>)
+          </button>
+        </div>
+
       </nav>
     </div>
 
