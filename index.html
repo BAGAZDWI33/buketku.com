@@ -67,18 +67,18 @@
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans leading-normal">
+
   <!-- NAVBAR -->
-  <header class="bg-white shadow-sm fixed top-0 w-full z-50">
+  <header class="bg-white shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center py-4">
-
-        <!-- === 1. LOGO === -->
-        <a href="/" class="flex items-center gap-2">
+        <!-- LOGO -->
+        <a href="/" class="flex items-center gap-3">
           <img src="assets/img/logo.png" class="h-10 w-10 object-contain rounded" loading="lazy" />
           <span class="text-2xl font-semibold">Buketku<span class="text-pink-600">.com</span></span>
         </a>
 
-        <!-- === 2. MENU (DESKTOP) === -->
+        <!-- MENU NAV (DESKTOP) -->
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a href="#produk" class="hover:text-pink-600">Produk</a>
           <a href="#cara-order" class="hover:text-pink-600">Cara Order</a>
@@ -86,46 +86,51 @@
           <a href="#kontak" class="hover:text-pink-600">Kontak</a>
         </nav>
 
-        <!-- === 3. AKSI (SEARCH + CART + MENU MOBILE) === -->
-        <div class="flex items-center gap-3">
-          <!-- Search hanya tampil di desktop -->
+        <!-- SEARCH + CART (DESKTOP) -->
+        <div class="hidden sm:flex items-center gap-3">
           <input id="search" type="search" placeholder="Cari buket..."
-            class="hidden sm:block border rounded-md px-3 py-2 w-56" />
-
-          <!-- Tombol Keranjang (muncul di semua layar) -->
-          <button id="cartBtn" class="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700 text-sm">
+            class="border rounded-md px-3 py-2 w-56 hidden sm:block" />
+          <button id="cartBtn" class="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700">
             Keranjang (<span id="cartCount">0</span>)
           </button>
-
-          <!-- Tombol menu mobile (titik tiga) -->
-          <button id="menuBtn" class="md:hidden text-pink-600 text-2xl focus:outline-none">
-            &#8942;
-          </button>
         </div>
+
+        <!-- MOBILE MENU BUTTON (3 DOTS) -->
+        <button id="menuBtn" class="md:hidden text-pink-600 text-2xl focus:outline-none">
+          &#8942; <!-- kode HTML untuk ikon titik tiga vertikal -->
+        </button>
       </div>
     </div>
 
-    <!-- === MENU DROPDOWN MOBILE === -->
+    <!-- MOBILE MENU DROPDOWN -->
     <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
       <nav class="flex flex-col p-4 space-y-3 text-sm">
         <a href="#produk" class="hover:text-pink-600">Produk</a>
         <a href="#cara-order" class="hover:text-pink-600">Cara Order</a>
         <a href="#testimoni" class="hover:text-pink-600">Testimoni</a>
         <a href="#kontak" class="hover:text-pink-600">Kontak</a>
-        <a href="#checkout" class="font-semibold text-pink-600">Checkout</a>
+        <a href="#checkout" class="hover:text-pink-600 font-semibold">Checkout</a>
+        <div class="flex items-center gap-3">
+          <input id="search" type="search" placeholder="Cari buket..."
+            class="hidden sm:block border rounded-md px-3 py-2 w-56" />
+          <button id="mobileMenu" class="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700">
+            Keranjang (<span id="cartCount">0</span>)
+          </button>
+        </div>
+
       </nav>
     </div>
 
     <script>
-      // Toggle menu mobile
+      // JS sederhana untuk toggle menu mobile
       const menuBtn = document.getElementById('menuBtn');
       const mobileMenu = document.getElementById('mobileMenu');
+
       menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
     </script>
   </header>
-
 
   <!-- HERO -->
   <main>
