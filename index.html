@@ -4,18 +4,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Buketku.com — Buket Bunga Modern & Cantik | Beli Buket Online</title>
+  <title>Buketku - Beli Buket Online</title>
   <meta name="description"
     content="Buketku.com — Pilihan buket bunga modern dan cantik untuk kado, wisuda, ulang tahun, dan acara spesial. Pengiriman cepat, garansi segar.">
   <link rel="canonical" href="https://buketku.com/" />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Buketku.com — Buket Bunga Modern & Cantik" />
+  <meta property="og:title" content="Buketku- Modern & Cantik" />
   <meta property="og:description"
     content="Pilihan buket bunga modern & cantik. Pengiriman cepat, packaging rapi. Order online di Buketku.com" />
   <meta property="og:url" content="https://buketku.com/" />
-  <meta property="og:image" content="/assets/og-buket.jpg" />
+  <meta property="og:image" content="assets/img/logo.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -67,16 +67,17 @@
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans leading-normal">
-
   <!-- NAVBAR -->
   <header class="bg-white shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center py-4">
+        <!-- LOGO -->
         <a href="/" class="flex items-center gap-3">
           <img src="assets/img/logo.png" class="h-10 w-10 object-contain rounded" loading="lazy" />
           <span class="text-2xl font-semibold">Buketku<span class="text-pink-600">.com</span></span>
         </a>
 
+        <!-- MENU NAV (DESKTOP) -->
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a href="#produk" class="hover:text-pink-600">Produk</a>
           <a href="#cara-order" class="hover:text-pink-600">Cara Order</a>
@@ -84,14 +85,44 @@
           <a href="#kontak" class="hover:text-pink-600">Kontak</a>
         </nav>
 
-        <div class="flex items-center gap-3">
+        <!-- SEARCH + CART (DESKTOP) -->
+        <div class="hidden sm:flex items-center gap-3">
           <input id="search" type="search" placeholder="Cari buket..."
-            class="hidden sm:block border rounded-md px-3 py-2 w-56" />
-          <button id="cartBtn" class="btn btn-primary bs-btn bg-pink-600 text-white px-4 py-2 rounded-md">Keranjang
-            (<span id="cartCount">0</span>)</button>
+            class="border rounded-md px-3 py-2 w-56 hidden sm:block" />
+          <button id="cartBtn" class="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700">
+            Keranjang (<span id="cartCount">0</span>)
+          </button>
         </div>
+
+        <!-- MOBILE MENU BUTTON (3 DOTS) -->
+        <button id="menuBtn" class="md:hidden text-pink-600 text-2xl focus:outline-none">
+          &#8942; <!-- kode HTML untuk ikon titik tiga vertikal -->
+        </button>
       </div>
     </div>
+
+    <!-- MOBILE MENU DROPDOWN -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <nav class="flex flex-col p-4 space-y-3 text-sm">
+        <a href="#produk" class="hover:text-pink-600">Produk</a>
+        <a href="#cara-order" class="hover:text-pink-600">Cara Order</a>
+        <a href="#testimoni" class="hover:text-pink-600">Testimoni</a>
+        <a href="#kontak" class="hover:text-pink-600">Kontak</a>
+        <a href="#checkout" class="hover:text-pink-600 font-semibold">Checkout</a>
+        <button id="mobileCartBtn" class="mt-2 bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700">Keranjang
+          (<span id="mobileCartCount">0</span>)</button>
+      </nav>
+    </div>
+
+    <script>
+      // JS sederhana untuk toggle menu mobile
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
   </header>
 
   <!-- HERO -->
@@ -528,7 +559,7 @@
     function checkoutWhatsApp() {
       if (cart.length === 0) return;
 
-      const phone = '6281234567890'; // Ganti dengan nomor admin Buketku.com
+      const phone = '6282324757905'; // Ganti dengan nomor admin Buketku.com
       let message = `Halo *Buketku.com* 🌸%0ASaya ingin memesan:%0A%0A`;
 
       cart.forEach((item, i) => {
