@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buketku.com — Buket Bunga Modern & Cantik | Beli Buket Online</title>
+  <meta name="description"
+    content="Buketku.com — Pilihan buket bunga modern dan cantik untuk kado, wisuda, ulang tahun, dan acara spesial. Pengiriman cepat, garansi segar.">
+  <link rel="canonical" href="https://buketku.com/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Buketku.com — Buket Bunga Modern & Cantik" />
+  <meta property="og:description"
+    content="Pilihan buket bunga modern & cantik. Pengiriman cepat, packaging rapi. Order online di Buketku.com" />
+  <meta property="og:url" content="https://buketku.com/" />
+  <meta property="og:image" content="/assets/og-buket.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Buketku.com — Buket Bunga Modern & Cantik" />
+  <meta name="twitter:description"
+    content="Pilihan buket bunga modern & cantik. Pengiriman cepat, packaging rapi. Order online di Buketku.com" />
+
+  <!-- JSON-LD Structured Data (Local Business + Product snippets) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Buketku",
+    "url": "https://buketku.com/",
+    "logo": "https://buketku.com/assets/logo.png",
+    "image": "https://buketku.com/assets/og-buket.jpg",
+    "description": "Toko buket bunga online - pengiriman cepat dan garansi kesegaran.",
+    "telephone": "+62-823-2475-7905"
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Contoh No.1",
+      "addressLocality": "Jakarta",
+      "addressRegion": "DKI Jakarta",
+      "postalCode": "10110",
+      "addressCountry": "ID"
+    },
+    "openingHours": "Mo-Su 08:00-20:00"
+  }
+  </script>
+
+  <!-- Tailwind (CDN for quick prototype) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap (for some components if you want) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity=""
+    crossorigin="anonymous">
+
+  <!-- Simple site stylesheet to prevent Tailwind/Bootstrap clash for utilities we want to override -->
+  <style>
+    /* keep bootstrap containers from overriding Tailwind on this page in undesired places */
+    .bs-btn {
+      /* small helper: use for bootstrap buttons only when needed */
+    }
+
+    /* small visual tuning */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans leading-normal">
+
+  <!-- NAVBAR -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <a href="/" class="flex items-center gap-3">
+          <img src="assets/img/logo.png" class="h-10 w-10 object-contain rounded" loading="lazy" />
+          <span class="text-2xl font-semibold">Buketku<span class="text-pink-600">.com</span></span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#produk" class="hover:text-pink-600">Produk</a>
+          <a href="#cara-order" class="hover:text-pink-600">Cara Order</a>
+          <a href="#testimoni" class="hover:text-pink-600">Testimoni</a>
+          <a href="#kontak" class="hover:text-pink-600">Kontak</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <input id="search" type="search" placeholder="Cari buket..."
+            class="hidden sm:block border rounded-md px-3 py-2 w-56" />
+          <button id="cartBtn" class="btn btn-primary bs-btn bg-pink-600 text-white px-4 py-2 rounded-md">Keranjang
+            (<span id="cartCount">0</span>)</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="bg-gradient-to-r from-pink-100 to-white">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Buket Cantik untuk Momen Spesialmu</h1>
+          <p class="mt-4 text-lg text-gray-700">Kirimkan kebahagiaan melalui rangkaian bunga segar, packaging rapi, dan
+            pengiriman cepat ke seluruh Indonesia.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#produk"
+              class="inline-block bg-pink-600 text-white px-6 py-3 rounded-md shadow hover:opacity-95">Lihat Koleksi</a>
+            <a href="#cara-order" class="inline-block border border-pink-600 text-pink-600 px-6 py-3 rounded-md">Cara
+              Order</a>
+          </div>
+
+          <ul class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm text-gray-600">
+            <li>✅ Pengiriman Same-day di wilayah tertentu</li>
+            <li>✅ Garansi segar 24 jam</li>
+            <li>✅ Kemasan eco-friendly</li>
+          </ul>
+        </div>
+
+        <div class="hidden lg:block">
+          <img src="assets/img/buket1-removebg-preview.png" alt="Buket bunga terbaik"
+            class="rounded-xl shadow-lg w-full object-cover" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section id="produk" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-semibold">Pilihan Populer</h2>
+        <select id="sort" class="border rounded px-3 py-2">
+          <option value="popular">Paling Populer</option>
+          <option value="price-asc">Terendah</option>
+          <option value="price-desc">Tertinggi</option>
+        </select>
+      </div>
+
+      <div id="products" class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Products injected by JS -->
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="#" class="underline">Lihat Semua Produk</a>
+      </div>
+    </section>
+
+    <!-- HOW TO ORDER -->
+    <section id="cara-order"
+      class="relative bg-gradient-to-br from-pink-50 via-white to-pink-100 py-16 overflow-hidden">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h3 class="text-3xl font-bold text-gray-800 mb-4">✨ Cara Order di Buketku.com ✨</h3>
+        <p class="text-gray-600 text-lg mb-12">
+          Pesan buket impianmu dalam 3 langkah mudah dan cepat!
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Step 1 -->
+          <div
+            class="group bg-white shadow-lg rounded-2xl p-8 transform hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+            <div
+              class="w-16 h-16 mx-auto bg-pink-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
+              <span class="text-pink-600 text-2xl font-bold">1</span>
+            </div>
+            <h4 class="text-xl font-semibold mb-2">Pilih Buket</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Jelajahi koleksi terbaik kami dan klik <span class="font-semibold">“Tambah ke Keranjang”</span>.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div
+            class="group bg-white shadow-lg rounded-2xl p-8 transform hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 delay-100">
+            <div
+              class="w-16 h-16 mx-auto bg-pink-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
+              <span class="text-pink-600 text-2xl font-bold">2</span>
+            </div>
+            <h4 class="text-xl font-semibold mb-2">Isi Info Pengiriman</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Tulis alamat lengkap penerima dan tambahkan catatan ucapan spesial.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div
+            class="group bg-white shadow-lg rounded-2xl p-8 transform hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 delay-200">
+            <div
+              class="w-16 h-16 mx-auto bg-pink-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
+              <span class="text-pink-600 text-2xl font-bold">3</span>
+            </div>
+            <h4 class="text-xl font-semibold mb-2">Konfirmasi & Kirim</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Pilih metode pembayaran, konfirmasi pesanan, dan kami akan kirim tepat waktu 💐
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background decorative elements -->
+      <div class="absolute -top-10 -left-10 w-32 h-32 bg-pink-200 opacity-20 blur-3xl rounded-full animate-pulse"></div>
+      <div
+        class="absolute bottom-0 right-0 w-40 h-40 bg-pink-300 opacity-30 blur-3xl rounded-full animate-pulse delay-200">
+      </div>
+    </section>
+
+    <!-- Optional small animation -->
+    <script>
+      // Fade-in animation saat di-scroll
+      document.addEventListener("DOMContentLoaded", () => {
+        const steps = document.querySelectorAll("#cara-order .group");
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("opacity-100", "translate-y-0");
+            }
+          });
+        }, { threshold: 0.2 });
+
+        steps.forEach(step => {
+          step.classList.add("opacity-0", "translate-y-8", "transition-all", "duration-700");
+          observer.observe(step);
+        });
+      });
+    </script>
+
+
+    <!-- TESTIMONIAL SECTION -->
+    <section id="testimoni" class="relative bg-gradient-to-br from-pink-50 via-white to-pink-100 py-20 overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h3 class="text-3xl font-bold text-gray-800 mb-4">Apa Kata Pelanggan Kami</h3>
+        <p class="text-gray-600 mb-12 text-lg">Kami berkomitmen memberikan pengalaman terbaik untuk setiap momen
+          istimewa Anda.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Testi 1 -->
+          <div
+            class="testimonial bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl hover:bg-pink-50">
+            <div class="flex justify-center mb-4">
+              <img src="assets/img/gayus.jpg" alt="Siti" class="w-16 h-16 rounded-full object-cover shadow">
+            </div>
+            <blockquote class="italic text-gray-700 leading-relaxed">
+              “Buketnya cantik banget dan tahan lama, bikin hari spesialku makin berkesan!”
+            </blockquote>
+            <cite class="block mt-4 text-pink-600 font-semibold">— Gayus, Bekasi</cite>
+          </div>
+
+          <!-- Testi 2 -->
+          <div
+            class="testimonial bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl hover:bg-pink-50 delay-100">
+            <div class="flex justify-center mb-4">
+              <img src="assets/img/putri.jpeg" alt="Asep" class="w-16 h-16 rounded-full object-cover shadow">
+            </div>
+            <blockquote class="italic text-gray-700 leading-relaxed">
+              “Pengirimannya super cepat, packing rapi banget! Servisnya juga ramah.”
+            </blockquote>
+            <cite class="block mt-4 text-pink-600 font-semibold">— Putri, Bandung</cite>
+          </div>
+
+          <!-- Testi 3 -->
+          <div
+            class="testimonial bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl hover:bg-pink-50 delay-200">
+            <div class="flex justify-center mb-4">
+              <img src="assets/img/dea.jpeg" alt="Lina" class="w-16 h-16 rounded-full object-cover shadow">
+            </div>
+            <blockquote class="italic text-gray-700 leading-relaxed">
+              “Recommended banget buat hadiah ulang tahun! Desainnya elegan dan harum bunganya awet.”
+            </blockquote>
+            <cite class="block mt-4 text-pink-600 font-semibold">— Lina, Surabaya</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft glowing background -->
+      <div class="absolute -top-10 -left-10 w-48 h-48 bg-pink-200 opacity-30 blur-3xl rounded-full animate-pulse"></div>
+      <div
+        class="absolute bottom-0 right-0 w-56 h-56 bg-pink-300 opacity-30 blur-3xl rounded-full animate-pulse delay-200">
+      </div>
+    </section>
+
+    <!-- Fade-in Animation Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".testimonial");
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("opacity-100", "translate-y-0");
+            }
+          });
+        }, { threshold: 0.2 });
+
+        cards.forEach(card => {
+          card.classList.add("opacity-0", "translate-y-10", "transition-all", "duration-700");
+          observer.observe(card);
+        });
+      });
+    </script>
+
+
+    <!-- CONTACT -->
+    <!-- CONTACT -->
+    <section id="kontak" class="bg-pink-50 py-16 relative overflow-hidden">
+      <div class="max-w-3xl mx-auto px-6">
+        <h3 class="text-3xl font-bold text-center text-gray-800">Kontak & Lokasi</h3>
+        <p class="text-center text-gray-600 mt-2">Butuh bantuan? Kirim pesan langsung ke WhatsApp kami 🌸</p>
+
+        <form id="contactForm" class="mt-8 grid grid-cols-1 gap-4 bg-white p-8 rounded-2xl shadow-lg">
+          <input type="text" id="name" name="name" placeholder="Nama Lengkap" required
+            class="px-4 py-3 rounded-md border focus:ring-2 focus:ring-pink-400 outline-none" />
+          <input type="email" id="email" name="email" placeholder="Email Aktif" required
+            class="px-4 py-3 rounded-md border focus:ring-2 focus:ring-pink-400 outline-none" />
+          <textarea id="message" name="message" placeholder="Tulis pesanmu di sini..." required
+            class="px-4 py-3 rounded-md border focus:ring-2 focus:ring-pink-400 outline-none h-32"></textarea>
+          <button type="submit"
+            class="bg-pink-600 text-white py-3 rounded-md hover:bg-pink-700 transition duration-300 font-semibold">
+            Kirim
+          </button>
+        </form>
+      </div>
+
+      <!-- Background Soft Glow -->
+      <div class="absolute -top-10 -left-10 w-48 h-48 bg-pink-200 opacity-30 blur-3xl rounded-full animate-pulse"></div>
+      <div
+        class="absolute bottom-0 right-0 w-56 h-56 bg-pink-300 opacity-30 blur-3xl rounded-full animate-pulse delay-200">
+      </div>
+    </section>
+
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Ambil data form
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Nomor WhatsApp tujuan (ubah dengan nomor kamu)
+        const phone = "6282324757905"; // gunakan format internasional tanpa + (contoh: 62 untuk Indonesia)
+
+        // Format pesan ke WhatsApp
+        const text = `Halo Buketku.com 🌸%0ASaya ingin menghubungi:%0A%0A` +
+          `👤 Nama: ${name}%0A` +
+          `📧 Email: ${email}%0A` +
+          `💬 Pesan:%0A${message}%0A%0ATerima kasih 🙏`;
+
+        // Buat URL WhatsApp
+        const url = `https://wa.me/${phone}?text=${text}`;
+
+        // Buka WhatsApp
+        window.open(url, '_blank');
+
+        // Kosongkan form setelah dikirim
+        e.target.reset();
+      });
+    </script>
+
+
+  </main>
+
+  <!-- CART SIDEBAR -->
+  <aside id="cartSidebar"
+    class="fixed right-0 top-0 h-full w-96 transform translate-x-full transition-transform bg-white shadow-lg z-50 overflow-auto">
+    <div class="p-6">
+      <div class="flex justify-between items-center">
+        <h4 class="font-semibold">Keranjang</h4>
+        <button id="closeCart" class="text-gray-500">Tutup</button>
+      </div>
+      <div id="cartItems" class="mt-4 space-y-4"></div>
+      <div class="mt-6">
+        <div class="flex justify-between text-lg font-semibold">
+          <span>Total</span><span id="cartTotal">Rp0</span>
+        </div>
+        <button id="checkoutBtn" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+          Checkout via WhatsApp
+        </button>
+      </div>
+    </div>
+  </aside>
+
+
+
+  <!-- FOOTER -->
+  <footer class="bg-white mt-12 border-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <img src="assets/img/logo.png" alt="Buketku logo" class="h-20 mb-2" loading="lazy" />
+        <p class="text-sm text-gray-600">Buketku.com </p>
+        <p class="text-sm text-gray-600">Buket bunga modern untuk momen terindah.</p>
+      </div>
+      <div>
+        <h5 class="font-semibold">Kategori</h5>
+        <ul class="mt-2 text-sm text-gray-600">
+          <li><a href="#">Buket Anniversary</a></li>
+          <li><a href="#">Buket Wisuda</a></li>
+          <li><a href="#">Buket Ulang Tahun</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-semibold">Info</h5>
+        <ul class="mt-2 text-sm text-gray-600">
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Kebijakan Pengembalian</a></li>
+          <li><a href="#">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center text-xs text-gray-500 py-4">© <span id="year"></span> Buketku.com — Semua hak dilindungi.
+    </div>
+  </footer>
+
+  <!-- Minimal JS for demo: products, cart, simple SEO-friendly behaviors -->
+  <script>
+    // Sample product data (replace with backend data or fetch from API)
+    const productsData = [
+      { id: 1, title: 'Buket Mawar Merah Classic', price: 150000, image: 'assets/img/buket1.jpeg', short: '30 mawar segar' },
+      { id: 2, title: 'Buket Pastel Romantis', price: 175000, image: 'assets/img/buket2.jpeg', short: 'Mix peony & rose' },
+      { id: 3, title: 'Buket Wisuda Elegan', price: 130000, image: 'assets/img/buket3.jpeg', short: 'Warna formal, rapi' },
+      { id: 4, title: 'Buket Ulang Tahun Ceria', price: 145000, image: 'assets/img/buket4.jpeg', short: 'Warna cerah & fun' },
+
+    ];
+
+    // Utilities
+    const rupiah = n => n.toLocaleString('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+
+    // Render products
+    const productsEl = document.getElementById('products');
+    function renderProducts(list) {
+      productsEl.innerHTML = '';
+      list.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'bg-white rounded-lg shadow p-4 flex flex-col';
+        card.innerHTML = `
+          <img src="${p.image}" alt="${p.title}" class="h-40 w-full object-cover rounded" loading="lazy">
+          <h4 class="mt-3 font-semibold text-lg">${p.title}</h4>
+          <p class="text-sm text-gray-600">${p.short}</p>
+          <div class="mt-auto flex items-center justify-between gap-3">
+            <div class="text-pink-600 font-semibold">${rupiah(p.price)}</div>
+            <div class="flex items-center gap-2">
+              <button class="text-sm px-3 py-1 border rounded" data-id="${p.id}" onclick="quickView(${p.id})">Lihat</button>
+              <button class="bg-pink-600 text-white px-3 py-1 rounded" onclick="addToCart(${p.id})">Tambah</button>
+            </div>
+          </div>
+        `;
+        productsEl.appendChild(card);
+      });
+    }
+    renderProducts(productsData);
+
+    // Simple cart (localStorage)
+    let cart = JSON.parse(localStorage.getItem('buketku_cart') || '[]');
+    const cartCountEl = document.getElementById('cartCount');
+    function updateCartUI() {
+      cartCountEl.textContent = cart.reduce((s, i) => s + i.qty, 0);
+      document.getElementById('cartTotal').textContent = rupiah(cart.reduce((s, i) => s + i.qty * i.price, 0));
+      const cartItems = document.getElementById('cartItems');
+      cartItems.innerHTML = cart.map(it => `
+        <div class="flex items-center gap-3 border-b pb-3">
+          <img src="${it.image}" alt="${it.title}" class="w-16 h-16 object-cover rounded" loading="lazy">
+          <div class="flex-1">
+            <div class="font-semibold">${it.title}</div>
+            <div class="text-sm text-gray-500">${rupiah(it.price)} x ${it.qty}</div>
+          </div>
+          <div class="text-sm">
+            <button onclick="changeQty(${it.id}, -1)" class="px-2">-</button>
+            <button onclick="changeQty(${it.id}, 1)" class="px-2">+</button>
+          </div>
+        </div>
+      `).join('') || '<p class="text-gray-500">Keranjang kosong</p>';
+    }
+    updateCartUI();
+
+    function addToCart(id) {
+      const p = productsData.find(x => x.id === id);
+      const idx = cart.findIndex(x => x.id === id);
+      if (idx > -1) cart[idx].qty += 1; else cart.push({ ...p, qty: 1 });
+      localStorage.setItem('buketku_cart', JSON.stringify(cart));
+      updateCartUI();
+      alert('Produk ditambahkan ke keranjang');
+    }
+    function changeQty(id, delta) {
+      const idx = cart.findIndex(x => x.id === id);
+      if (idx === -1) return;
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) cart.splice(idx, 1);
+      localStorage.setItem('buketku_cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+
+
+
+    // Cart sidebar toggles
+    const cartSidebar = document.getElementById('cartSidebar');
+    document.getElementById('cartBtn').addEventListener('click', () => {
+      cartSidebar.classList.remove('translate-x-full');
+    });
+    document.getElementById('closeCart').addEventListener('click', () => {
+      cartSidebar.classList.add('translate-x-full');
+    });
+
+    // Quick view (basic)
+    function quickView(id) {
+      const p = productsData.find(x => x.id === id);
+      alert(`${p.title}\n${p.short}\nHarga: ${rupiah(p.price)}`);
+    }
+
+    // Simple sort
+    document.getElementById('sort').addEventListener('change', e => {
+      const v = e.target.value;
+      let sorted = [...productsData];
+      if (v === 'price-asc') sorted.sort((a, b) => a.price - b.price);
+      if (v === 'price-desc') sorted.sort((a, b) => b.price - a.price);
+      if (v === 'popular') sorted = productsData; // demo
+      renderProducts(sorted);
+    });
+
+    // Contact form handler (demo)
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Pesan terkirim. Kami akan menghubungi Anda segera.');
+      e.target.reset();
+    });
+
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // SEO-friendly tweaks: set focusable h1/h2, ensure images have alt (done), use lazy loading (done)
+
+    // === Checkout ke WhatsApp ===
+    function checkoutWhatsApp() {
+      if (cart.length === 0) return;
+
+      const phone = '6281234567890'; // Ganti dengan nomor admin Buketku.com
+      let message = `Halo *Buketku.com* 🌸%0ASaya ingin memesan:%0A%0A`;
+
+      cart.forEach((item, i) => {
+        message += `${i + 1}. ${item.title} - ${rupiah(item.price)} x ${item.qty}%0A`;
+      });
+
+      const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+      message += `%0A*Total: ${rupiah(total)}*%0A%0AMohon konfirmasi ketersediaan buket ya 🙏`;
+
+      const url = `https://wa.me/${phone}?text=${message}`;
+      window.open(url, '_blank');
+
+      // Hapus keranjang setelah checkout
+      cart = [];
+      localStorage.removeItem('buketku_cart');
+      updateCartUI();
+    }
+
+    // === Hubungkan tombol Checkout ===
+    if (checkoutBtn) checkoutBtn.addEventListener('click', checkoutWhatsApp);
+
+  </script>
+
+  <!-- Bootstrap JS (optional for some components) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity=""
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
