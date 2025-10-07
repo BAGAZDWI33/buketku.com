@@ -69,16 +69,17 @@
 <body class="bg-gray-50 text-gray-800 font-sans leading-normal">
 
   <!-- NAVBAR -->
-  <header class="bg-white shadow-sm">
+  <header class="bg-white shadow-sm fixed top-0 w-full z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center py-4">
-        <!-- LOGO -->
-        <a href="/" class="flex items-center gap-3">
+
+        <!-- === 1. LOGO === -->
+        <a href="/" class="flex items-center gap-2">
           <img src="assets/img/logo.png" class="h-10 w-10 object-contain rounded" loading="lazy" />
           <span class="text-2xl font-semibold">Buketku<span class="text-pink-600">.com</span></span>
         </a>
 
-        <!-- MENU NAV (DESKTOP) -->
+        <!-- === 2. MENU (DESKTOP) === -->
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a href="#produk" class="hover:text-pink-600">Produk</a>
           <a href="#cara-order" class="hover:text-pink-600">Cara Order</a>
@@ -86,51 +87,54 @@
           <a href="#kontak" class="hover:text-pink-600">Kontak</a>
         </nav>
 
-        <!-- SEARCH + CART (DESKTOP) -->
-        <div class="hidden sm:flex items-center gap-3">
+        <!-- === 3. AKSI (SEARCH + CART + MENU MOBILE) === -->
+        <div class="flex items-center gap-3">
+          <!-- Search hanya tampil di desktop -->
           <input id="search" type="search" placeholder="Cari buket..."
-            class="border rounded-md px-3 py-2 w-56 hidden sm:block" />
-          <button id="cartBtn" class="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700">
-            Keranjang (<span id="cartCount">0</span>)
+            class="hidden sm:block border rounded-md px-3 py-2 w-56" />
+
+          <!-- Tombol Keranjang -->
+          <button id="cartBtn"
+            class="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700 text-sm flex items-center gap-2">
+            <!-- Ikon hanya tampil di mobile -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block md:hidden text-white" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m10-9l2 9m-6 0h4" />
+            </svg>
+            <!-- Teks hanya tampil di desktop -->
+            <span class="hidden md:inline">Keranjang (<span id="cartCount">0</span>)</span>
+          </button>
+
+          <!-- Tombol menu mobile (titik tiga) -->
+          <button id="menuBtn" class="md:hidden text-pink-600 text-2xl focus:outline-none">
+            &#8942;
           </button>
         </div>
-
-        <!-- MOBILE MENU BUTTON (3 DOTS) -->
-        <button id="menuBtn" class="md:hidden text-pink-600 text-2xl focus:outline-none">
-          &#8942; <!-- kode HTML untuk ikon titik tiga vertikal -->
-        </button>
       </div>
     </div>
 
-    <!-- MOBILE MENU DROPDOWN -->
+    <!-- === MENU DROPDOWN MOBILE === -->
     <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
       <nav class="flex flex-col p-4 space-y-3 text-sm">
         <a href="#produk" class="hover:text-pink-600">Produk</a>
         <a href="#cara-order" class="hover:text-pink-600">Cara Order</a>
         <a href="#testimoni" class="hover:text-pink-600">Testimoni</a>
         <a href="#kontak" class="hover:text-pink-600">Kontak</a>
-        <a href="#checkout" class="hover:text-pink-600 font-semibold">Checkout</a>
-        <div class="flex items-center gap-3">
-          <input id="search" type="search" placeholder="Cari buket..."
-            class="hidden sm:block border rounded-md px-3 py-2 w-56" />
-          <button id="mobileMenu" class="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700">
-            Keranjang (<span id="cartCount">0</span>)
-          </button>
-        </div>
-
+        <a href="#checkout" class="font-semibold text-pink-600">Checkout</a>
       </nav>
     </div>
 
     <script>
-      // JS sederhana untuk toggle menu mobile
+      // Toggle menu mobile
       const menuBtn = document.getElementById('menuBtn');
       const mobileMenu = document.getElementById('mobileMenu');
-
       menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
     </script>
   </header>
+
 
   <!-- HERO -->
   <main>
